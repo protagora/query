@@ -1,0 +1,131 @@
+{
+  "TABLE_NAME": "datadocs-163219.010ff92f6a62438aa47c10005fe98fc9.inv",
+  "GROUP_BY": [
+    {
+      "Field": "category",
+      "Limit": null,
+      "Sort": -1,
+      "SortDirection": "DESC",
+      "DateAggregation": null
+    }
+  ],
+  "VALUES": [
+    {
+      "Field": "raisedAmt",
+      "Operation": "SUM",
+      "DateAggregation": null,
+      "Modifier": null,
+      "Order": null,
+      "Direction": null,
+      "ArrayLimit": null
+    },
+    {
+      "Field": "state",
+      "Operation": "ARRAY_AGG",
+      "DateAggregation": null,
+      "Order": -1,
+      "Direction": "DESC",
+      "Modifier": "DISTINCT",
+      "ArrayLimit": 5
+    }
+  ],
+  "TOTAL_LIMIT": 10000,
+  "EXPECTED QUERY": "SELECT category, SUM(raisedAmt), ARRAY_AGG(DISTINCT state ORDER BY state DESC LIMIT 5) FROM `datadocs-163219.010ff92f6a62438aa47c10005fe98fc9.inv` GROUP BY category LIMIT 10000",
+  "EXPECTED RESULT":
+  [
+    [
+      "biotech",
+      77250000,
+      [
+        "MA",
+        "CA"
+      ]
+    ],
+    [
+      "consulting",
+      32135000,
+      [
+        "TX",
+        "MA",
+        "GA"
+      ]
+    ],
+    [
+      "other",
+      119850000,
+      [
+        "NY",
+        "NM",
+        "NC",
+        "MO",
+        "MA"
+      ]
+    ],
+    [
+      "hardware",
+      824500000,
+      [
+        "TX",
+        "OH",
+        "NJ",
+        "MA",
+        "CA"
+      ]
+    ],
+    [
+      "software",
+      1017942000,
+      [
+        "WA",
+        "VA",
+        "UT",
+        "TX",
+        "TN"
+      ]
+    ],
+    [
+      "mobile",
+      323020000,
+      [
+        "WA",
+        "NY",
+        "NC",
+        "MO",
+        "MA"
+      ]
+    ],
+    [
+      "cleantech",
+      258900000,
+      [
+        "WA",
+        "IL",
+        "FL",
+        "DC",
+        "CA"
+      ]
+    ],
+    [
+      "web",
+      11765074750,
+      [
+        "WA",
+        "VA",
+        "UT",
+        "TX",
+        "RI"
+      ]
+    ],
+    [
+      null,
+      373300000,
+      [
+        "VA",
+        "NY",
+        "NC",
+        "CO",
+        "CA"
+      ]
+    ]
+  ]
+}

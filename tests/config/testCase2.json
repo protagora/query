@@ -1,0 +1,41 @@
+{
+  "TABLE_NAME": "datadocs-163219.010ff92f6a62438aa47c10005fe98fc9.inv",
+  "GROUP_BY": [
+    {
+      "Field": "category",
+      "Limit": 5,
+      "Sort": -1,
+      "Alias": null,
+      "SortDirection": "DESC",
+      "DateAggregation": null
+    }
+  ],
+  "VALUES": [
+    {
+      "Field": "round",
+      "Operation": "COUNT",
+      "DateAggregation": null,
+      "ArrayLimit": null,
+      "Alias": null
+    }
+  ],
+  "TOTAL_LIMIT": 10000,
+  "EXPECTED_RESULT": [
+    [
+      "web",
+      1208
+    ],
+    [
+      "software",
+      102
+    ],
+    [
+      "mobile",
+      48
+    ],
+    [
+      "hardware",
+      39
+    ]
+  ]
+}

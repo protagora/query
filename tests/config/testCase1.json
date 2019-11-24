@@ -1,0 +1,34 @@
+{
+  "TABLE_NAME": "datadocs-163219.010ff92f6a62438aa47c10005fe98fc9.inv",
+  "TOTAL_LIMIT": 1000,
+  "GROUP_BY": [
+    {
+      "Field": "company",
+      "Limit": 2,
+      "Sort": -1,
+      "SortDirection": "DESC"
+    },
+    {
+      "Field": "category",
+      "Limit": 2,
+      "Sort": -1,
+      "SortDirection": "ASC"
+    },
+    {
+      "Field": "city",
+      "Limit": 2,
+      "Sort": -1,
+      "SortDirection": "DESC"
+    }
+  ],
+  "VALUES": [
+    {
+      "Field": "raisedAmt",
+      "Operation": "AVG",
+      "ArrayLimit": 5,
+      "Alias": "raisedAmt_AVG"
+    }
+  ],
+  "EXPECTED_QUERY": "SELECT company, category, city, AVG(raisedAmt) AS raisedAmt_AVG FROM `datadocs-163219.010ff92f6a62438aa47c10005fe98fc9.inv` GROUP BY company, category, city LIMIT 1000",
+  "EXPECTED_RESULT": ""
+}
